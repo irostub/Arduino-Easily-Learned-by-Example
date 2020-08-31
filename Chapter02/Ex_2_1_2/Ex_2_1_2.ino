@@ -17,5 +17,5 @@ void loop()
   Serial.println(sets[idx]);
   delay(2000);                                          //2초의 딜레이
   idx += 1;                                             //표시할 문자열 배열 인덱스 값 증가
-  if(number == sizeof(sets)/sizeof(char*)) number = 0;  //문자열 배열의 인덱스 반복
+  if(idx == sizeof(sets)/sizeof(char*)) idx = 0;  //문자열 배열의 인덱스 반복
 }
