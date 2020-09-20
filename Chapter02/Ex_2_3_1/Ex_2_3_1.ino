@@ -21,6 +21,9 @@ void loop()
     if(isDigit(val))          //0~9의 숫자이면 True 반환, isDigit()함수
     {         
       blinkNumber=(val-'0');  //ASCII 0~9를 DEC 0~9로 변환하기 위해 ASCII기준 문자 0값 뺄셈
+      Serial.print("입력값으로 ");
+      Serial.print(blinkNumber);
+      Serial.println("이 들어옴");
     }
   }
   
@@ -28,6 +31,10 @@ void loop()
   {
     for(int i = 0; i < blinkNumber; i++)
     {
+      Serial.print("ledPin 13번 점멸 ");
+      Serial.print(int(i));
+      Serial.print("번째 반복 중, 딜레이 : ");
+      Serial.println(blinkNumber * 1000);
       digitalWrite(ledPin, HIGH); //led on
       delay(blinkNumber*1000);
       digitalWrite(ledPin,LOW);   //led off
@@ -36,6 +43,7 @@ void loop()
   }
   else
   {
+      Serial.println("ledPin 13번 점멸, 딜레이 500");
       digitalWrite(ledPin, HIGH);
       delay(500);
       digitalWrite(ledPin,LOW); 

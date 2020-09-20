@@ -5,18 +5,19 @@
   이름과 시계를 포함합니다
 
 */
-#include <LiquidCrystal_I2C.h>
-#include <Wire.h>
+#include <LiquidCrystal.h>
 
 int second = 0;
 int minute = 0;
 int hour = 0;
-LiquidCrystal_I2C lcd(0x27,16,2);
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 char buf[8];
 
 void setup() 
 {
-  lcd.init();
+  lcd.begin(16,2);
+  lcd.setCursor(0,0);
+  lcd.print("Name");
 }
 
 void loop() 

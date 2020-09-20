@@ -5,7 +5,7 @@
   
 */
 int number = 0;
-
+int switcher = 0;
 void setup() 
 {
   Serial.begin(9600);   //9600bps로 시리얼 통신 설정
@@ -15,8 +15,14 @@ void loop()
 {
   Serial.print(number);
   Serial.println(" sec");
-  delay(2000);          //2초의 딜레이
-  //delay(5000);        //5초의 딜레이
-  number += 2;          //표시할 number값 2씩 증가
-  //number += 5;        //표시할 number값 5씩 증가
+  if(switcher == 0){
+    delay(2000);          //2초의 딜레이
+    number += 2;          //표시할 number값 2씩 증가 
+    switcher = 1;
+  }
+  else if(switcher == 1){
+    delay(5000);        //5초의 딜레이
+    number += 5;        //표시할 number값 5씩 증가
+    switcher = 0;
+  }
 }

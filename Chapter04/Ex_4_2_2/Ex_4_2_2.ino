@@ -24,7 +24,7 @@ void loop()
       if(switcher)ledBrightness[i]--;
       else ledBrightness[i]++;
       analogWrite(leds[i],ledBrightness[i]);
-      delay(10);
+      delay(5);
     }
   }
   switcher = !switcher;
