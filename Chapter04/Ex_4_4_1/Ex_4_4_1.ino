@@ -14,8 +14,8 @@ const byte number[10] = {
   B01111101,
   B00000111,
   B01111111,
-  B01101111,
-}
+  B01101111
+};
 
 void setup(){
   for(int i=2; i<=9; ++i){

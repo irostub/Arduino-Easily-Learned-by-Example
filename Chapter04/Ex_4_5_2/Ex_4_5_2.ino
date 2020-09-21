@@ -14,13 +14,14 @@ const byte number[10] = {
   B01111101,
   B00000111,
   B01111111,
-  B01101111,
-}
+  B01101111
+};
 
 const byte digitNumber[4] = {13,12,11,10};
 int count = 0;
 int value[4];
 int digitSelect;
+long sampleTime;
 int count5ms;
 
 void setup(){
@@ -41,27 +42,27 @@ void loop(){
   if(count>=9999) count = 0;
   else{
     while(millis()-sampleTime<5);
-    ++count;
+    ++count5ms;
     if (count5ms>200){
       ++count;
 
       value[3] = count/1000;
-      value[2] = (count - (value[3]*1000))/1000;
+      value[2] = (count - (value[3]*1000))/100;
       value[1] = (count - (value[3]*1000)-(value[2]*100))/10;
-      value[0] = (count - (value[3]*1000)-(value[2]*100)-value[1]*10));     
+      value[0] = (count - (value[3]*1000)-(value[2]*100)-value[1]*10);     
 
       count5ms = 0;
     }
   }
   }
 
-void fndDisplay(int displayValue){
+void fndDisplay(int digit, int displayValue){
   boolean bitValue;
   for(int i=1; i<=4; ++i){
     digitalWrite(digitNumber[i-1],HIGH);
   }
   for(int i=0; i<=7; ++i){
-    bitValue = bitRead(number[displayValue]);
+    bitValue = bitRead(number[displayValue],i);
     digitalWrite(i+2,bitValue);
   }
   for(int i=1; i<=4; ++i){
