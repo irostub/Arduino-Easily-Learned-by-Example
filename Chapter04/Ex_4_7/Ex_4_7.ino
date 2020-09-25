@@ -37,7 +37,7 @@ byte arrow3[] = {
   B00000000
 };
 
-const int columPins[] = {2,3,4,5,6,7,8,9};
+const int columnPins[] = {2,3,4,5,6,7,8,9};
 const int rowPins[] = {10,11,12,15,16,17,18,19};
 
 void setup(){
