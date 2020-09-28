@@ -53,9 +53,8 @@ void setup() {
 
 void loop() {
   char key = keypadRead();
-  Serial.print(key);
   if(key != 0){
-    Serial.print("you push");
+    Serial.print("you push ");
     Serial.print(key);
     Serial.println("key");
   }
