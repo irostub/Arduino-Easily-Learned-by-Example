@@ -32,7 +32,7 @@ void setup(){
 void loop(){
   int xValue = analogRead(xAxisPin);
   int yValue = analogRead(yAxisPin);
-  int zValue = analogRead(zAxisPin);
+  int zValue = digitalRead(zAxisPin);
 
   int xDisplay = map(xValue, 0, 1023,6, 15);
   int yDisplay = map(yValue, 0, 1023,6, 15);
