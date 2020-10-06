@@ -8,7 +8,7 @@
 
 LiquidCrystal lcd(12,11,5,4,3,2);
 
-char soundInputPin = 0;
+int soundInputPin = 0;
 
 void setup() {
  lcd.begin(16,2);
@@ -26,6 +26,12 @@ void setup() {
 }
 
 void loop() {
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("ADC :");
+  lcd.setCursor(0,1);
+  lcd.print("MIC :");
+  lcd.setCursor(15,1);
   int soundInput = analogRead(soundInputPin);
   int soundLevel = map(soundInput, 50, 900, 0, 100);
   lcd.setCursor(6,0);
@@ -33,5 +39,5 @@ void loop() {
   lcd.setCursor(6,1);
   lcd.print(soundLevel);
   
-  delay(1000);
+  delay(100);
 }
