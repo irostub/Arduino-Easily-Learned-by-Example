@@ -6,6 +6,8 @@ char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursd
 
 void setup () {
   lcd.begin(16,2);
+  lcd.setCursor(0,0);
+  lcd.print("Mep 7-1");
   rtc.begin();
   rtc.adjust(DateTime(2020, 10, 10, 9, 14, 33));
 
