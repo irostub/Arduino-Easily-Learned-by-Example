@@ -19,6 +19,7 @@ void loop() {
     if(motorAngle == 180)state = 1;
     else if(motorAngle == 0)state = 0;
     motor1.write(motorAngle);
+    Serial.println(motorAngle);
     if(state)motorAngle--;
     else motorAngle++;
     
